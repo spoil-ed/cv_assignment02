@@ -3,7 +3,7 @@ import glob
 
 random.seed(42)
 
-trainval_file = '../data/VOCdevkit/VOC2012/ImageSets/Segmentation/trainval.txt'
+trainval_file = 'data/VOCdevkit/VOC2012/ImageSets/Segmentation/trainval.txt'
 all_image_ids = set()
 with open(trainval_file, 'r') as f:
     lines = f.readlines()
@@ -24,11 +24,11 @@ train_lines = [f"{id}\n" for id in image_ids[:train_size]]
 val_lines = [f"{id}\n" for id in image_ids[train_size:train_size + val_size]]
 test_lines = [f"{id}\n" for id in image_ids[train_size + val_size:]]
 
-with open('../data/VOCdevkit/VOC2012/split/train.txt', 'w') as f:
+with open('data/VOCdevkit/VOC2012/split/train.txt', 'w') as f:
     f.writelines(train_lines)
-with open('../data/VOCdevkit/VOC2012/split/val.txt', 'w') as f:
+with open('data/VOCdevkit/VOC2012/split/val.txt', 'w') as f:
     f.writelines(val_lines)
-with open('../data/VOCdevkit/VOC2012/split/test.txt', 'w') as f:
+with open('data/VOCdevkit/VOC2012/split/test.txt', 'w') as f:
     f.writelines(test_lines)
 
 print(f"Total images: {total}")

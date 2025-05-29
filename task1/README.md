@@ -32,39 +32,14 @@
 │       └── show_annotation.m
 ├── experiments
 │   ├── finetune_20250529_034950
-│   │   └── events.out.tfevents.1748461790.lenovo.64939.0
-│   ├── images
-│   │   ├── Accuracy_train.png
-│   │   ├── Accuracy_val.png
-│   │   ├── Loss_train.png
-│   │   ├── Loss_val.png
-│   │   ├── conv1_kernels_finetune.png
-│   │   ├── conv1_kernels_scratch.png
-│   │   ├── fc_weights_finetune.png
-│   │   ├── fc_weights_scratch.png
-│   │   ├── hyperparam_heatmap_finetune.png
-│   │   ├── training_history_finetune.png
-│   │   ├── training_history_scratch.png
-│   │   ├── weight_distribution_finetune.png
-│   │   └── weight_distribution_scratch.png
-│   ├── metrics_scratch_20250529_034820.pt
-│   ├── metrics_scratch_20250529_034901.pt
-│   ├── metrics_scratch_20250529_035326.pt
-│   ├── metrics_scratch_20250529_040026.pt
-│   └── scratch_20250529_035330
-│       └── events.out.tfevents.1748462010.lenovo.64939.1
+│   └── ...
 ├── images
 │   ├── boxplot_lr_base.png
-│   ├── boxplot_lr_base_beautified.png
-│   ├── boxplot_val_acc.png
-│   ├── boxplot_val_acc_batch_size.png
-│   ├── boxplot_val_acc_lr_base.png
-│   ├── boxplot_val_acc_num_epochs.png
-│   └── boxplot_val_acc_weight_decay.png
+│   └── ...
 ├── models
 │   ├── best_model.pth
 │   ├── caltech101_resnet18_finetune.pth
-│   ├── caltech101_resnet18_scratch.pth
+│   └── caltech101_resnet18_scratch.pth
 ├── report
 ├── runs
 ├── src
@@ -128,8 +103,8 @@
 - 微调模型：`caltech101_resnet18_finetune.pth`
 - 从头训练模型：`caltech101_resnet18_scratch.pth`
 - 最佳模型：`best_model.pth`
-- 下载链接：[百度云/Google Drive 链接，请自行上传并替换]
-- 说明：权重文件位于 `models/` 目录，实验报告中包含详细性能分析。
+- 下载链接：[百度云链接](https://pan.baidu.com/s/16ltCGOIotZC5y1wReYtsqg?pwd=best)
+- 说明：权重文件下载后放置在 `models/` 目录下，调用`test.py`实现测试。
 
 ## 实验报告
 - 报告（PDF 格式）位于 `report/` 目录，包含模型描述、数据集说明、实验结果、TensorBoard 损失/准确率曲线及超参数分析。

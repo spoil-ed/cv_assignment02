@@ -1,9 +1,9 @@
 auto_scale_lr = dict(base_batch_size=16, enable=False)
 backend_args = None
-data_root = '/home/spoil/cv/assignment02/task2/data/VOCdevkit/'
+data_root = '../data/VOCdevkit/'
 dataset_type = 'CocoDataset'
 default_hooks = dict(
-    checkpoint=dict(interval=1, type='CheckpointHook'),
+    checkpoint=dict(interval=12, type='CheckpointHook'),
     logger=dict(interval=50, type='LoggerHook'),
     param_scheduler=dict(type='ParamSchedulerHook'),
     sampler_seed=dict(type='DistSamplerSeedHook'),
@@ -534,7 +534,7 @@ num_proposals = 100
 num_stages = 6
 optim_wrapper = dict(
     clip_grad=dict(max_norm=1, norm_type=2),
-    optimizer=dict(lr=0.0025, type='AdamW', weight_decay=0.0001),
+    optimizer=dict(lr=2.5e-05, type='AdamW', weight_decay=0.0001),
     type='OptimWrapper')
 param_scheduler = [
     dict(
@@ -558,7 +558,7 @@ test_dataloader = dict(
         ann_file='VOC2012/Annotations/instances_test2012.json',
         backend_args=None,
         data_prefix=dict(img='VOC2012/JPEGImages/'),
-        data_root='/home/spoil/cv/assignment02/task2/data/VOCdevkit/',
+        data_root='../data/VOCdevkit/',
         metainfo=dict(
             classes=(
                 'aeroplane',
@@ -708,8 +708,7 @@ test_dataloader = dict(
     persistent_workers=True,
     sampler=dict(shuffle=False, type='DefaultSampler'))
 test_evaluator = dict(
-    ann_file=
-    '/home/spoil/cv/assignment02/task2/data/VOCdevkit/VOC2012/Annotations/instances_test2012.json',
+    ann_file='../data/VOCdevkit/VOC2012/Annotations/instances_test2012.json',
     backend_args=None,
     format_only=False,
     metric='bbox',
@@ -731,7 +730,7 @@ test_pipeline = [
         ),
         type='PackDetInputs'),
 ]
-train_cfg = dict(max_epochs=36, type='EpochBasedTrainLoop', val_interval=1)
+train_cfg = dict(max_epochs=48, type='EpochBasedTrainLoop', val_interval=6)
 train_dataloader = dict(
     batch_sampler=dict(type='AspectRatioBatchSampler'),
     batch_size=2,
@@ -739,7 +738,7 @@ train_dataloader = dict(
         ann_file='VOC2012/Annotations/instances_train2012.json',
         backend_args=None,
         data_prefix=dict(img='VOC2012/JPEGImages/'),
-        data_root='/home/spoil/cv/assignment02/task2/data/VOCdevkit/',
+        data_root='../data/VOCdevkit/',
         filter_cfg=dict(filter_empty_gt=True, min_size=32),
         metainfo=dict(
             classes=(
@@ -897,7 +896,7 @@ val_dataloader = dict(
         ann_file='VOC2012/Annotations/instances_val2012.json',
         backend_args=None,
         data_prefix=dict(img='VOC2012/JPEGImages/'),
-        data_root='/home/spoil/cv/assignment02/task2/data/VOCdevkit/',
+        data_root='../data/VOCdevkit/',
         metainfo=dict(
             classes=(
                 'aeroplane',
@@ -1047,8 +1046,7 @@ val_dataloader = dict(
     persistent_workers=True,
     sampler=dict(shuffle=False, type='DefaultSampler'))
 val_evaluator = dict(
-    ann_file=
-    '/home/spoil/cv/assignment02/task2/data/VOCdevkit/VOC2012/Annotations/instances_val2012.json',
+    ann_file='../data/VOCdevkit/VOC2012/Annotations/instances_val2012.json',
     backend_args=None,
     format_only=False,
     metric='bbox',

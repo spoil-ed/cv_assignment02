@@ -6,7 +6,7 @@ import numpy as np
 import cv2
 
 # 配置路径
-voc_root = "/home/spoil/cv/assignment02/task2/data/VOCdevkit/VOC2012"
+voc_root = "data/VOCdevkit/VOC2012"
 annotation_dir = os.path.join(voc_root, "Annotations")
 image_dir = os.path.join(voc_root, "JPEGImages")
 seg_dir = os.path.join(voc_root, "SegmentationObject")
@@ -166,7 +166,7 @@ def mask_to_polygon_with_voc(mask, voc_xml_file, category_mapping):
             polygon_bbox = polygon_to_bbox(polygon)
             
             # 与 VOC annotation 的检测框计算 IoU
-            max_iou = 0.9
+            max_iou = 0.2
             best_annotation = None
             for ann in voc_annotations:
                 voc_bbox = ann['bbox']  # [xmin, ymin, xmax, ymax]
